@@ -31,6 +31,35 @@
 
 	// Add your code here
 	try { 
+ var r = new sn_ws.RESTMessageV2('x_698304_iplookup.IPInfo', ' GetIPInfo');
+ r.setStringParameterNoEscape('ipaddress', 'current.ip_address');
+ r.setStringParameterNoEscape('specific_field', 'geo');
+
+//override authentication profile 
+//authentication type ='basic'/ 'oauth2'
+//r.setAuthenticationProfile(authentication type, profile name);
+
+//set a MID server name if one wants to run the message on MID
+//r.setMIDServer('MY_MID_SERVER');
+
+//if the message is configured to communicate through ECC queue, either
+//by setting a MID server or calling executeAsync, one needs to set skip_sensor
+//to true. Otherwise, one may get an intermittent error that the response body is null
+//r.setEccParameter('skip_sensor', true);
+
+ var response = r.execute();
+ var responseBody = response.getBody();
+ var httpStatus = response.getStatusCode();
+ var responseObj=JSON.parse(responseBody);
+ current.city=responseObj.city;
+ gs.info("City = "+current.city);
+ current.update();
+}
+catch(err) {
+ gs.info("Uncaught error: "+err);
+}
+	
+	/*try { 
  var r = new sn_ws.RESTMessageV2('x_698304_iplookup. IPInfo', 'GetIPInfo');
  r.setStringParameterNoEscape('specific_field', 'geo');
  r.setStringParameterNoEscape('ipaddress', 'current.ip_address');
@@ -59,9 +88,7 @@
 /*catch(ex) {
  var message = ex.message;
 }*/
-catch(err) {
- gs.info("Uncaught error: "+err);
-}
+
 
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
@@ -70,7 +97,7 @@ catch(err) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>669ed8b62f723010e7fbd2172799b6bd</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name> Populate IP Address City</sys_name>
         <sys_overrides/>
         <sys_package display_value=" IPLookup" source="x_698304_iplookup">2d1b08b22f323010e7fbd2172799b6a7</sys_package>
@@ -78,7 +105,7 @@ catch(err) {
         <sys_scope display_value=" IPLookup">2d1b08b22f323010e7fbd2172799b6a7</sys_scope>
         <sys_update_name>sys_script_669ed8b62f723010e7fbd2172799b6bd</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-09-28 07:52:39</sys_updated_on>
+        <sys_updated_on>2021-09-30 07:09:20</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

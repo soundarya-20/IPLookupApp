@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="city" table="x_698304_iplookup_ipaddressinfo" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>city</element>
+            <name>x_698304_iplookup_ipaddressinfo</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-09-30 06:53:59</sys_created_on>
+            <sys_id>74e626132f32b010e7fbd2172799b67b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>city</sys_name>
+            <sys_package display_value=" IPLookup" source="x_698304_iplookup">2d1b08b22f323010e7fbd2172799b6a7</sys_package>
+            <sys_policy/>
+            <sys_scope display_value=" IPLookup">2d1b08b22f323010e7fbd2172799b6a7</sys_scope>
+            <sys_update_name>sys_choice_x_698304_iplookup_ipaddressinfo_city</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-09-30 06:53:59</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>city</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Mumbai</label>
+            <language>en</language>
+            <name>x_698304_iplookup_ipaddressinfo</name>
+            <sequence/>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-09-30 07:02:57</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>73d8e2932f32b010e7fbd2172799b65a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-09-30 07:02:57</sys_updated_on>
+            <value/>
+        </sys_choice>
+    </sys_choice>
+</record_update>
